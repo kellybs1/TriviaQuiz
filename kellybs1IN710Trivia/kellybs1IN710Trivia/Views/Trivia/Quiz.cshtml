@@ -1,0 +1,49 @@
+﻿@model kellybs1IN710Trivia.Models.ViewModelQuestion
+
+@{
+    Layout = "../_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Quiz</title>
+</head>
+<body onload="disableSubmit()">
+    <div class="container contentContainer">
+        <div class="contentText text-center">
+            <p>Question @Model.currentQuestion of @Model.nQuestionsTotal</p>
+            <div>
+                Question: <p>@Html.Raw(Model.Question)</p>
+            </div>
+            <div>
+                <form action="~/Trivia/Quiz" method="post">
+                    <div class="btn-group-vertical" data-toggle="buttons">
+                    @foreach (var answer in Model.Choices)
+                    {
+                        <label class="btn btn-custom btn-lg">
+                            <input type="radio" name="userAnswer" id="userAnswer" onchange="enableSubmit()" value=@Model.Choices.IndexOf(answer)>@Html.Raw(answer)                         
+                        </label>
+                    }
+                    </div>
+                    <br /><br />
+                    <div class="text-center">
+                        <button type="submit" id="submitButton" class="btn btn-custom btn-lg defaultButtonWidth" method="get">Submit</button>
+                    </div>
+                    <script>
+                        function enableSubmit() {
+                            document.getElementById("submitButton").disabled = false;
+                        }
+
+                        function disableSubmit() {
+                            document.getElementById("submitButton").disabled = true;
+                        }
+                    </script>
+                </form>        
+            </div>
+        </div>
+    </div>
+</body>
+</html>

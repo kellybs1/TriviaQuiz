@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = "../_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RegisterUser</title>
+</head>
+<body>
+    <div class="container contentContainer">
+        <div>
+            <h1>Register</h1>
+        </div>
+        <div class="contentText">
+            <form action="~/User/RegisterUser" method="post">
+                <div class="form-group">
+                    <label for="PlayerName">Username</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="PlayerName" name="PlayerName" maxlength="12" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="PlayerPassword">Password</label>
+                    <div class="col-md-4">
+                        <input type="password" class="form-control input-lg" id="PlayerPassword" name="PlayerPassword1" maxlength="24" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="PlayerPassword2">Confirm Password</label>
+                    <div class="col-md-4">
+                        <input type="password" class="form-control input-lg" id="PlayerPassword" name="PlayerPassword2" maxlength="24" />
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-custom btn-lg defaultButtonWidth" method="get">Submit</button>
+            </form>
+        </div>
+        <br /><br />
+        <form action="~/User/UserPage" method="get">
+            <button type="submit" class="btn btn-custom btn-lg defaultButtonWidth" method="get">Log in</button>
+        </form>
+        <br />
+        <button type="submit" class="btn btn-custom btn-lg defaultButtonWidth" onclick="goBack()">Go Back</button>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </div>   
+</body>
+</html>

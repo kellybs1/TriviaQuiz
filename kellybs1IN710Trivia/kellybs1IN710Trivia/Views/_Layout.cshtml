@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trivia</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div> 
+        <nav class="navbar navbar-toggleable-sm navbar-inverse fixed-top bg-inverse justify-content-center">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand navbar-brand-flex w-50 mr-auto  navText" href="~/Trivia/Home">Trivia Quiz</a>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mx-auto w-100 justify-content-center">
+                    <li class="nav-item navText" id="navlinks"><a class="nav-link" href="~/Trivia/Quiz">Take Quiz</a></li>
+                </ul>
+                <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+                    <li class="nav-item navTextSmall"><a class="nav-link" href="~/Trivia/Home">Home</a></li>
+                    <li class="nav-item navTextSmall"><a class="nav-link" href="~/Trivia/HighScores">High scores</a></li>
+                    <li class="nav-item navTextSmall"><a class="nav-link" href="~/User/UserPage">Log in/out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container contentContainer">
+        @RenderBody()
+    </div>
+</body>
+</html>

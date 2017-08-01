@@ -1,0 +1,31 @@
+﻿@model kellybs1IN710Trivia.Models.ViewModelQuestionResult
+
+@{
+    Layout = "../_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FinalResults</title>
+</head>
+<body>
+    <div class="container contentContainer contentText text-center">
+        <p><h1>Quiz complete!</h1></p>
+        <p><h1>Your score: @Model.nQuestionsCorrect out of @Model.nQuestionsTotal</h1></p>
+        <br />
+        <br />
+        <br />
+        <form action="~/Trivia/Home" method="get">
+            <button type="submit" class="btn btn-custom btn-lg defaultButtonWidth" method="get">Home</button>
+        </form>
+        <br />
+        <form action="~/Trivia/Quiz" method="get">
+            <button type="submit" class="btn btn-custom btn-lg defaultButtonWidth" method="get">New Quiz</button>
+        </form>
+       
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿@model kellybs1IN710Trivia.Models.LoggedInUser
+
+@{
+    Layout = "../_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LoggedIn</title>
+</head>
+<body>
+    <div class="container contentContainer">
+        <div class="contentText">
+            <p>Logged in as @Model.name</p>
+        </div>
+
+        <form action="~/Trivia/Home" method="get">
+            <button type="submit" class="btn btn-custom btn-lg defaultButtonWidth">OK</button>
+        </form>
+        <br />
+        <form action="~/Trivia/Quiz" method="get">
+            <button type="submit" class="btn btn-custom btn-lg defaultButtonWidth">Start quiz</button>
+        </form>
+        <br />
+        <form action="~/User/LogOut" method="get">
+            <button type="submit" class="btn btn-custom btn-lg defaultButtonWidth">Log Out</button>
+        </form>
+        <br />
+        <button type="submit" class="btn btn-custom btn-lg defaultButtonWidth" onclick="goBack()">Go Back</button>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿@model List<kellybs1IN710Trivia.Models.ViewModelHighScores>
+
+@{
+    Layout = "../_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HighScores</title>
+</head>
+<body>
+    <div class="container contentContainer">
+        <div class="text-center">
+            <p><h1>Monthly High Scores</h1></p>
+        </div>
+        <br />
+        <div class="highScores table-responsive" align="center">           
+            <table class="table text-center table-striped table-bordered resultsTable">
+                <tr>
+                    <th class="text-center">Player</th>
+                    <th class="text-center">Average Score</th>
+                </tr>
+                @foreach (var score in Model)
+                {
+                    <tr>
+                        <td>
+                            @score.PlayerName
+                        </td>
+                        <td>
+                            @score.AvgScore.ToString("F")
+                        </td>
+                    </tr>
+                }
+            </table>
+            <button type="submit" class="btn btn-custom btn-lg defaultButtonWidth" onclick="goBack()">Go Back</button>
+            <script>
+            function goBack() {
+                window.history.back();
+            }
+            </script>
+        </div>
+    </div>
+</body>
+</html>

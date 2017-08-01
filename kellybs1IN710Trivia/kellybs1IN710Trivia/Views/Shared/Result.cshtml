@@ -1,0 +1,41 @@
+﻿@model kellybs1IN710Trivia.Models.ViewModelResult
+
+@{
+    Layout = "../_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Results</title>
+</head>
+<body>
+    <div class="container contentContainer">
+        <div class="contentText">
+            <p><h1>@Model.ResultType</h1></p>
+            <p>@Model.ResultDescription</p>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-custom btn-lg defaultButtonWidth" onclick="goBack()">Go Back</button>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+        <br /><br />
+        <form action="~/Trivia/Home" method="get">
+            <button type="submit" class="btn btn-custom btn-lg defaultButtonWidth">Home</button>
+        </form>
+        <br />
+        <form action="~/User/RegisterUser" method="get">
+            <button type="submit" class="btn btn-custom btn-lg defaultButtonWidth" method="get">Register</button>
+        </form>
+        <br />
+        <form action="~/User/UserPage" method="get">
+            <button type="submit" class="btn btn-custom btn-lg defaultButtonWidth" method="get">Log in</button>
+        </form>
+    </div>
+</body>
+</html>
